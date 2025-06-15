@@ -1,45 +1,36 @@
-Project Name
+DOCUMENT CLASSIFICATION
 ==============================
 
-This repo is a Starting Pack for DS projects. You can rearrange the structure to make it fits your project.
+The project is set in the context of increasing digitization of documents and the development of artificial intelligence. Companies, especially those in the insurance sector, are seeking to automate the classification of their documents (such as birth certificates, sales contracts, etc.) to improve efficiency and accuracy.
+
+Technologies such as OCR (Optical Character Recognition), NLP (Natural Language Processing), CV (Computer Vision), or a hybrid approach combining NLP and CV offer promising solutions to address this challenge.
+
 
 Project Organization
 ------------
 
-    ├── LICENSE
-    ├── README.md          <- The top-level README for developers using this project.
-    ├── data               <- Should be in your computer but not on Github (only in .gitignore)
-    │   ├── processed      <- The final, canonical data sets for modeling.
-    │   └── raw            <- The original, immutable data dump.
+    ├── README.md
     │
-    ├── models             <- Trained and serialized models, model predictions, or model summaries
+    ├── models                          <- Contains trained CNN model and model training summaries
+    │   └── training_history            <- Contains CNN model training summaries
     │
-    ├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-    │                         the creator's name, and a short `-` delimited description, e.g.
-    │                         `1.0-alban-data-exploration`.
+    ├── notebooks                       <- Jupyter notebooks
+    │   ├── CNN_analysis.ipynb          <- Contains the analysis of the results for different CNN models     
+    │   ├── data_pixels_stats.ipynb     <- Contains the data exploration and visualitations for the Computer vision approach
+    │   └── text_based_classifier_analysis.ipynb <- Contains the data exploration and model training for the text minning approach
     │
-    ├── references         <- Data dictionaries, manuals, links, and all other explanatory materials.
+    ├── reports            <- Contains the final report of this project
     │
-    ├── reports            <- The reports that you'll make during this project as PDF
-    │   └── figures        <- Generated graphics and figures to be used in reporting
+    ├── requirements.txt   
     │
-    ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-    │                         generated with `pip freeze > requirements.txt`
+    ├── src                <- Source code for the streamlit app
+    │   └── streamlit      
+    │       └── app.py
+    ├── tools              <- Reusable fonctions for data exploration and model training
+    │   ├── callback.py    <- Define customs tensorflow callbacks
+    │   └── tools.py       <- Define useful fonction for data exploration and preprocessing
     │
-    ├── src                <- Source code for use in this project.
-    │   ├── __init__.py    <- Makes src a Python module
-    │   │
-    │   ├── features       <- Scripts to turn raw data into features for modeling
-    │   │   └── build_features.py
-    │   │
-    │   ├── models         <- Scripts to train models and then use trained models to make
-    │   │   │                 predictions
-    │   │   ├── predict_model.py
-    │   │   └── train_model.py
-    │   │
-    │   ├── visualization  <- Scripts to create exploratory and results oriented visualizations
-    │   │   └── visualize.py
-
+    ├── training_scripts        <- Training scripts
+    │   ├── predict_clip.py     <- Script to train and predict using CLIP
+    │   └── train_CNN_models.py <- Script to train all tested CNN architecture
 --------
-
-<p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
